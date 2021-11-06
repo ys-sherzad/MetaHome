@@ -53,7 +53,7 @@ var Content = Container(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'All Time Low',
+                    'All Time Low (slowed)',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w700,
@@ -81,7 +81,7 @@ var Content = Container(
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    print('pressed');
+                    print('pressed like');
                   },
                 ),
                 SizedBox(
@@ -93,7 +93,7 @@ var Content = Container(
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    print('pressed');
+                    print('pressed play');
                   },
                 ),
               ],

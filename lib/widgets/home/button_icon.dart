@@ -22,9 +22,7 @@ class ButtonIcon extends StatelessWidget {
       borderRadius: BorderRadius.circular(5),
       color: Colors.transparent,
       child: InkWell(
-        onTap: () {
-          print('hhhh');
-        },
+        onTap: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Center(
