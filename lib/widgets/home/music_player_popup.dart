@@ -11,8 +11,8 @@ var Content = Container(
   // ),
 );
 
-class BottomTabs extends HookWidget {
-  const BottomTabs({Key? key}) : super(key: key);
+class MusicPlayerPopup extends HookWidget {
+  const MusicPlayerPopup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

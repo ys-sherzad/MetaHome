@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:meta_home/widgets/home/bottom-tabs.dart';
-import 'package:meta_home/widgets/home/control-room.dart';
+import 'package:meta_home/widgets/home/music_player_popup.dart';
+import 'package:meta_home/widgets/home/control_room.dart';
 import 'package:meta_home/widgets/home/header.dart';
-import 'package:meta_home/widgets/home/power-usage-today.dart';
-import 'package:meta_home/widgets/home/room-tabs.dart';
+import 'package:meta_home/widgets/home/power_usage_today.dart';
+import 'package:meta_home/widgets/home/room_tabs.dart';
 
 BoxDecoration outline(double radius) {
   return BoxDecoration(
@@ -62,7 +62,7 @@ class Home extends HookWidget {
                   children: [
                     ControlRoom(),
                     Positioned(
-                      child: BottomTabs(),
+                      child: MusicPlayerPopup(),
                       bottom: 0,
                       right: 0,
                       left: 0,
