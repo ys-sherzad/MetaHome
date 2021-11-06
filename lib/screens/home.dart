@@ -47,15 +47,15 @@ class Home extends HookWidget {
             children: [
               Header(),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               PowerUsageToday(),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               RoomTabs(),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Expanded(
                 child: Stack(
