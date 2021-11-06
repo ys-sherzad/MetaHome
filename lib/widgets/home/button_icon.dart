@@ -24,7 +24,7 @@ class ButtonIcon extends StatelessWidget {
       child: InkWell(
         onTap: onPressed,
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(8.0),
           child: Center(
             child: icon,
           ),
