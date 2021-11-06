@@ -26,15 +26,29 @@ class Header extends HookWidget {
             flex: 1,
             child: Container(
               margin: EdgeInsets.only(right: 20.0),
-              padding: EdgeInsets.symmetric(vertical: 13.0),
+              padding: EdgeInsets.symmetric(vertical: 10.0),
               height: HEADER_HEIGHT,
               // decoration: outline(20.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Welcome home,'),
-                  Text('Yasir Sherzad'),
+                  Text(
+                    'Welcome home,',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: ColorLib.textSecondary,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(height: 4.0),
+                  Text(
+                    'Yasir Sherzad',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
                 ],
               ),
             ),
