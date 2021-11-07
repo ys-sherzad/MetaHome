@@ -4,9 +4,6 @@ import 'package:meta_home/repo/control_room_model.dart';
 import 'package:meta_home/utils.dart';
 import 'package:meta_home/widgets/home/toggle_button.dart';
 
-const _duration = Duration(milliseconds: 220);
-const _curve = Curves.easeIn;
-
 class ControlRoom extends HookWidget {
   const ControlRoom({Key? key}) : super(key: key);
 
@@ -29,16 +26,16 @@ class ControlRoom extends HookWidget {
     }) {
       var _nameText = AnimatedDefaultTextStyle(
         child: Text(name),
-        duration: _duration,
-        curve: _curve,
+        duration: duration,
+        curve: curve,
         style: isOn
             ? TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               )
             : TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: ColorLib.primary,
               ),
@@ -46,35 +43,36 @@ class ControlRoom extends HookWidget {
 
       var _devicesCountText = AnimatedDefaultTextStyle(
         child: Text('$countOfDevices device'),
-        duration: _duration,
-        curve: _curve,
+        duration: duration,
+        curve: curve,
         style: isOn
             ? TextStyle(
-                fontSize: 12,
+                fontSize: 14,
                 fontWeight: FontWeight.normal,
-                color: Colors.white,
+                color: Colors.white.withOpacity(0.6),
               )
             : TextStyle(
-                fontSize: 12,
+                fontSize: 14,
                 fontWeight: FontWeight.normal,
-                color: ColorLib.primary,
+                color: ColorLib.textSecondary,
               ),
       );
 
       return AnimatedContainer(
-        duration: _duration,
-        curve: _curve,
+        duration: duration,
+        curve: curve,
         decoration: BoxDecoration(
           border: Border.all(color: ColorLib.border),
           borderRadius: BorderRadius.circular(20.0),
           color: isOn ? ColorLib.primary : Colors.white,
           boxShadow: [
             BoxShadow(
-              color: isOn ? Colors.black : Colors.transparent,
-              blurRadius: isOn ? 2.0 : 0.0,
-              spreadRadius: isOn ? 0.0 : 0.0,
+              color:
+                  isOn ? ColorLib.primary.withOpacity(.25) : Colors.transparent,
+              blurRadius: isOn ? 10.0 : 0.0,
+              spreadRadius: isOn ? 5.0 : 0.0,
               offset: isOn
-                  ? Offset(2.0, 2.0)
+                  ? Offset(3, 5)
                   : Offset.zero, // shadow direction: bottom right
             )
           ],
@@ -110,7 +108,7 @@ class ControlRoom extends HookWidget {
 
     return Container(
       child: GridView.count(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         crossAxisSpacing: 28.0,
         mainAxisSpacing: 28.0,
         crossAxisCount: 2,
