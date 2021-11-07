@@ -51,12 +51,12 @@ class ControlCard extends HookWidget {
       style: isOn
           ? TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w800,
               color: Colors.white,
             )
           : TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w800,
               color: ColorLib.primary,
             ),
     );
