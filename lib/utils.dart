@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const double HEADER_HEIGHT = 70.0;
-const double LAYOUT_HORIZONTAL_MARGIN = 20.0;
+const double LAYOUT_HORIZONTAL_OFFSET = 26.0;
 
 const duration = Duration(milliseconds: 300);
 const curve = Curves.easeInCubic;

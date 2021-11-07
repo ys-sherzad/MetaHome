@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/repo/control_room_model.dart';
+import 'package:meta_home/utils.dart';
 import 'package:meta_home/widgets/home/card.dart';
 
 var iconPath = {
@@ -28,11 +29,16 @@ class ControlRoom extends HookWidget {
 
     return Container(
       child: GridView.count(
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-        crossAxisSpacing: 28.0,
-        mainAxisSpacing: 28.0,
+        padding: EdgeInsets.only(
+          top: 10,
+          left: LAYOUT_HORIZONTAL_OFFSET,
+          right: LAYOUT_HORIZONTAL_OFFSET,
+          bottom: 120,
+        ),
+        crossAxisSpacing: 26.0,
+        mainAxisSpacing: 26.0,
         crossAxisCount: 2,
-        childAspectRatio: .95,
+        childAspectRatio: .98,
         children: [
           for (var room in myList.value)
             ControlCard(
