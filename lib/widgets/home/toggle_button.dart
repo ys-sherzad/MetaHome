@@ -3,7 +3,7 @@ import 'package:meta_home/utils.dart';
 
 // Constants
 double TOGGLE_HEIGHT = 34.0;
-double TOGGLE_WIDTH = 60.0;
+double TOGGLE_WIDTH = 63.0;
 
 class ToggleButton extends StatelessWidget {
   final Function() onPressed;
@@ -58,6 +58,7 @@ class ToggleButton extends StatelessWidget {
 
     return InkWell(
       splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       onTap: this.onPressed,
       child: AnimatedContainer(
         duration: duration,
