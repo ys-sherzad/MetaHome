@@ -64,9 +64,3 @@ List<ControlRoom> controlRooms = [
     isOn: false,
   ),
 ];
-
-// class ControlRoomList extends StateNotifier<List<ControlRoom>> {
-//   ControlRoomList([List<ControlRoom>? initialState]) : super(initialState ?? []);
-// }
-
-
