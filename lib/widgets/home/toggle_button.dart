@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/utils.dart';
 
 // Constants
@@ -41,18 +40,21 @@ Widget TextContent() {
   );
 }
 
-class ToggleButton extends HookWidget {
-  const ToggleButton({Key? key}) : super(key: key);
+class ToggleButton extends StatelessWidget {
+  final Function() onPressed;
+  final bool isOn;
+
+  const ToggleButton({
+    Key? key,
+    required this.onPressed,
+    required this.isOn,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final isOn = useState(false);
-
     return InkWell(
       splashColor: Colors.transparent,
-      onTap: () {
-        isOn.value = !isOn.value;
-      },
+      onTap: this.onPressed,
       child: Container(
         height: TOGGLE_HEIGHT,
         width: TOGGLE_WIDTH,
@@ -64,8 +66,7 @@ class ToggleButton extends HookWidget {
         child: Stack(
           children: [
             AnimatedAlign(
-              alignment:
-                  isOn.value ? Alignment.centerRight : Alignment.centerLeft,
+              alignment: isOn ? Alignment.centerRight : Alignment.centerLeft,
               duration: const Duration(milliseconds: 220),
               curve: Curves.easeIn,
               child: CircleShape(),
