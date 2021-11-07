@@ -29,11 +29,11 @@ class ControlRoom extends HookWidget {
 
     return Container(
       child: GridView.count(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: 10,
           left: LAYOUT_HORIZONTAL_OFFSET,
           right: LAYOUT_HORIZONTAL_OFFSET,
-          bottom: 120,
+          bottom: 180,
         ),
         crossAxisSpacing: 26.0,
         mainAxisSpacing: 26.0,

@@ -32,7 +32,7 @@ class Header extends HookWidget {
                   ),
                   // SizedBox(height: 4.0),
                   Text(
-                    'Andrey Thomson',
+                    'Yasir Sherzad',
                     style: TextStyle(
                       fontSize: 21.0,
                       fontWeight: FontWeight.w700,

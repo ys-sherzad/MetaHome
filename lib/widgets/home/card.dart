@@ -50,12 +50,12 @@ class ControlCard extends HookWidget {
       curve: curve,
       style: isOn
           ? TextStyle(
-              fontSize: 20,
+              fontSize: 19,
               fontWeight: FontWeight.w800,
               color: Colors.white,
             )
           : TextStyle(
-              fontSize: 20,
+              fontSize: 19,
               fontWeight: FontWeight.w800,
               color: ColorLib.primary,
             ),

@@ -6,17 +6,17 @@ import 'package:meta_home/widgets/home/button_icon.dart';
 
 var Line = Container(
   alignment: Alignment.center,
-  height: 3,
-  width: 45,
+  height: 2,
+  width: 42,
   decoration: BoxDecoration(
-    color: Colors.white,
+    color: Colors.white.withOpacity(.7),
     borderRadius: BorderRadius.circular(5),
   ),
   child: null,
 );
 
 var Content = Container(
-  height: BOTTOM_TAB_HEIGHT * 2.4,
+  height: BOTTOM_TAB_HEIGHT * 2.3,
   width: double.infinity,
   color: ColorLib.secondary,
   padding: EdgeInsets.only(left: 50, right: 50, top: 18, bottom: 14),
@@ -24,7 +24,7 @@ var Content = Container(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
       Line,
-      const SizedBox(height: 20),
+      const SizedBox(height: 15),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -59,7 +59,7 @@ var Content = Container(
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 3,
                   ),
                   Text(
@@ -84,7 +84,7 @@ var Content = Container(
                     print('pressed like');
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8.0,
                 ),
                 ButtonIcon(
