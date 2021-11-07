@@ -41,7 +41,7 @@ var Content = Container(
               ),
               color: ColorLib.primary,
               image: DecorationImage(
-                image: AssetImage('assets/jon-bellion.png'),
+                image: AssetImage('assets/images/jon-bellion.png'),
                 fit: BoxFit.cover,
               ),
             ),
