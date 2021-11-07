@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meta_home/utils.dart';
+import 'package:meta_home/widgets/home/bottom_tabs.dart';
 import 'package:meta_home/widgets/home/music_player_popup.dart';
 import 'package:meta_home/widgets/home/control_room.dart';
 import 'package:meta_home/widgets/home/header.dart';
@@ -34,13 +36,19 @@ class Home extends StatelessWidget {
                     ControlRoom(),
                     Positioned(
                       child: MusicPlayerPopup(),
-                      bottom: 0,
+                      bottom: BOTTOM_TAB_HEIGHT - 35,
                       right: 0,
                       left: 0,
                     ),
+                    Positioned(
+                      child: BottomTabs(),
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

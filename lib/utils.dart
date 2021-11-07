@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const double HEADER_HEIGHT = 70.0;
 const double LAYOUT_HORIZONTAL_OFFSET = 26.0;
+const double BOTTOM_TAB_HEIGHT = 60.0;
 
 const duration = Duration(milliseconds: 300);
 const curve = Curves.easeInCubic;

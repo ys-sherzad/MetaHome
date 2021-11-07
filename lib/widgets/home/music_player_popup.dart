@@ -16,15 +16,15 @@ var Line = Container(
 );
 
 var Content = Container(
-  height: 100,
+  height: BOTTOM_TAB_HEIGHT * 2.4,
   width: double.infinity,
   color: ColorLib.secondary,
   padding: EdgeInsets.only(left: 50, right: 50, top: 18, bottom: 14),
   child: Column(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    // crossAxisAlignment: CrossAxisAlignment.end,
+    mainAxisAlignment: MainAxisAlignment.start,
     children: [
       Line,
+      const SizedBox(height: 20),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
