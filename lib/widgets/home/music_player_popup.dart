@@ -54,12 +54,7 @@ class Content extends HookWidget {
                 height: 50.0,
                 // FIXME: There must be a better way to do this!
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(5),
-                    bottomLeft: Radius.circular(5),
-                    topRight: Radius.circular(5),
-                    bottomRight: Radius.circular(5),
-                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
                   color: ColorLib.primary,
                   image: DecorationImage(
                     image: AssetImage('assets/images/jon-bellion.png'),
