@@ -1,3 +1,13 @@
+/**
+ *     (╯ ͡❛ ͜ʖ ͡❛)╯┻━┻
+ * **************************************************************
+ * Instagram @ys.sherzad  *************************
+ * Twitter @ys_sherzad  ********************
+ * **************************************************************
+ * "Make Everyday Count" 🇦🇫
+ * 
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/utils.dart';
@@ -103,9 +113,9 @@ class Content extends HookWidget {
                     ),
                     ButtonIcon(
                       isActive: isPlaying.value,
-                      activeIconPath: 'assets/images/play.svg',
+                      activeIconPath: 'assets/images/pause.svg',
                       activeIconColor: Colors.white,
-                      inactiveIconPath: 'assets/images/pause.svg',
+                      inactiveIconPath: 'assets/images/play.svg',
                       inactiveIconColor: Color.fromRGBO(255, 255, 255, .6),
                       onPressed: () {
                         isPlaying.value = !isPlaying.value;
