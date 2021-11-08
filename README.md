@@ -1,5 +1,5 @@
 # MetaHome 👑
-
+A smart home app concept
 
 ![](MetaHomeScreenshot.png)
 
