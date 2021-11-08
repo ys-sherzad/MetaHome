@@ -9,7 +9,7 @@ class ControlCard extends HookWidget {
   final String name;
   final int countOfDevices;
   final bool isOn;
-  final String iconName;
+  final String iconPath;
   final Function() updateList;
 
   const ControlCard({
@@ -18,7 +18,7 @@ class ControlCard extends HookWidget {
     required this.name,
     required this.countOfDevices,
     required this.isOn,
-    required this.iconName,
+    required this.iconPath,
     required this.updateList,
   }) : super(key: key);
 
@@ -109,7 +109,7 @@ class ControlCard extends HookWidget {
             animation: _colorTween,
             builder: (context, child) {
               return SvgPicture.asset(
-                iconName,
+                iconPath,
                 semanticsLabel: name,
                 height: 32,
                 width: 32,
