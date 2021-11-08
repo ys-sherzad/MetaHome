@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:meta_home/utils.dart';
 
-const _duration = Duration(milliseconds: 300);
+const _duration = Duration(milliseconds: 260);
 const _curve = Curves.easeInOut;
 
 const iconPath = {
@@ -23,7 +23,10 @@ class Tab {
 }
 
 List<Tab> tabs = [
-  Tab(id: '1', name: 'Statistics'),
+  Tab(
+    id: '1',
+    name: 'Statistics',
+  ),
   Tab(
     id: '2',
     name: 'Home',
@@ -62,6 +65,8 @@ class BottomTabs extends HookWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // The animation here could be done
+                    // by scaling the Container but heck, I'm lazy
                     AnimatedContainer(
                       duration: _duration,
                       curve: _curve,

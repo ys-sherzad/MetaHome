@@ -18,7 +18,7 @@ class Tab {
 
 List<Tab> tabs_data = [
   Tab(id: '1', name: 'All Rooms', selected: true),
-  Tab(id: '2', name: 'Livig Room', selected: false),
+  Tab(id: '2', name: 'Living Room', selected: false),
   Tab(id: '3', name: 'Bathroom', selected: false),
   Tab(id: '4', name: 'Bedroom', selected: false),
   Tab(id: '5', name: 'Kitchen', selected: false),

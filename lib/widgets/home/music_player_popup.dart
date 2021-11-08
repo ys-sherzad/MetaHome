@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:meta_home/utils.dart';
 import 'package:meta_home/widgets/home/button_icon.dart';
 
@@ -15,95 +14,115 @@ var Line = Container(
   child: null,
 );
 
-var Content = Container(
-  height: BOTTOM_TAB_HEIGHT * 2.3,
-  width: double.infinity,
-  color: ColorLib.secondary,
-  padding: EdgeInsets.only(left: 50, right: 50, top: 18, bottom: 14),
-  child: Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    children: [
-      Line,
-      const SizedBox(height: 15),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+class Content extends HookWidget {
+  const Content({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final isPlaying = useState(false);
+    final isFavorite = useState(false);
+
+    return Container(
+      height: BOTTOM_TAB_HEIGHT * 2.3,
+      width: double.infinity,
+      color: ColorLib.secondary,
+      padding: EdgeInsets.only(
+          left: LAYOUT_HORIZONTAL_OFFSET + 20,
+          right: LAYOUT_HORIZONTAL_OFFSET + 20,
+          top: 18,
+          bottom: 14),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            width: 50.0,
-            height: 50.0,
-            // FIXME: There must be a better way to do this!
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5),
-                bottomLeft: Radius.circular(5),
-                topRight: Radius.circular(5),
-                bottomRight: Radius.circular(5),
+          Line,
+          const SizedBox(height: 15),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 50.0,
+                height: 50.0,
+                // FIXME: There must be a better way to do this!
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(5),
+                    bottomLeft: Radius.circular(5),
+                    topRight: Radius.circular(5),
+                    bottomRight: Radius.circular(5),
+                  ),
+                  color: ColorLib.primary,
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/jon-bellion.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-              color: ColorLib.primary,
-              image: DecorationImage(
-                image: AssetImage('assets/images/jon-bellion.png'),
-                fit: BoxFit.cover,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'All Time Low (slowed)',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      Text(
+                        'Jon Bellion',
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, .6),
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15, right: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'All Time Low (slowed)',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
+              Container(
+                child: Row(
+                  children: [
+                    ButtonIcon(
+                      isActive: isFavorite.value,
+                      activeIconPath: 'assets/images/heart.svg',
+                      activeIconColor: Colors.white,
+                      inactiveIconPath: 'assets/images/heart-outline.svg',
+                      inactiveIconColor: Color.fromRGBO(255, 255, 255, .6),
+                      semanticLabel: 'Favorite',
+                      iconSize: 26,
+                      onPressed: () {
+                        isFavorite.value = !isFavorite.value;
+                      },
                     ),
-                  ),
-                  const SizedBox(
-                    height: 3,
-                  ),
-                  Text(
-                    'Jon Bellion',
-                    style: TextStyle(
-                        color: Color.fromRGBO(255, 255, 255, .6),
-                        fontWeight: FontWeight.w300),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Container(
-            child: Row(
-              children: [
-                ButtonIcon(
-                  icon: Icon(
-                    Feather.heart,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    print('pressed like');
-                  },
+                    const SizedBox(
+                      width: 5.0,
+                    ),
+                    ButtonIcon(
+                      isActive: isPlaying.value,
+                      activeIconPath: 'assets/images/play.svg',
+                      activeIconColor: Colors.white,
+                      inactiveIconPath: 'assets/images/pause.svg',
+                      inactiveIconColor: Color.fromRGBO(255, 255, 255, .6),
+                      semanticLabel: 'Favorite',
+                      onPressed: () {
+                        isPlaying.value = !isPlaying.value;
+                      },
+                    ),
+                  ],
                 ),
-                const SizedBox(
-                  width: 8.0,
-                ),
-                ButtonIcon(
-                  icon: Icon(
-                    Feather.play,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    print('pressed play');
-                  },
-                ),
-              ],
-            ),
+              )
+            ],
           )
         ],
-      )
-    ],
-  ),
-);
+      ),
+    );
+  }
+}
 
 class MusicPlayerPopup extends HookWidget {
   const MusicPlayerPopup({Key? key}) : super(key: key);
@@ -112,8 +131,8 @@ class MusicPlayerPopup extends HookWidget {
   Widget build(BuildContext context) {
     return ClipPath(
       clipper: Clipper(),
-      clipBehavior: Clip.antiAlias,
-      child: Content,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Content(),
     );
   }
 }
