@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/repo/control_room_model.dart';
 import 'package:meta_home/utils.dart';
 import 'package:meta_home/widgets/home/card.dart';
+import 'package:animate_do/animate_do.dart';
 
 var iconPath = {
   '1': 'assets/images/living-room.svg',
@@ -19,6 +20,8 @@ class ControlRoom extends HookWidget {
   @override
   Widget build(BuildContext context) {
     var myList = useState(controlRooms);
+
+    var size = MediaQuery.of(context).size;
 
     void _updateList(String id) {
       myList.value = [
@@ -41,14 +44,19 @@ class ControlRoom extends HookWidget {
         childAspectRatio: .98,
         children: [
           for (var room in myList.value)
-            ControlCard(
-              id: room.id,
-              name: room.name,
-              countOfDevices: room.countOfDevices,
-              isOn: room.isOn,
-              iconPath: iconPath[room.id] as String,
-              updateList: () => _updateList(room.id),
-            ),
+            SlideInUp(
+              delay: Duration(milliseconds: int.parse(room.id) * 300),
+              duration: const Duration(milliseconds: 600),
+              from: size.width * .4,
+              child: ControlCard(
+                id: room.id,
+                name: room.name,
+                countOfDevices: room.countOfDevices,
+                isOn: room.isOn,
+                iconPath: iconPath[room.id] as String,
+                updateList: () => _updateList(room.id),
+              ),
+            )
         ],
       ),
     );

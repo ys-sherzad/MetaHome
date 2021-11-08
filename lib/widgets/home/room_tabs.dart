@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../utils.dart';
+import 'package:animate_do/animate_do.dart';
 
 const _duration = Duration(milliseconds: 250);
 const _curve = Curves.easeInOutQuad;
@@ -70,29 +71,33 @@ class RoomTabs extends HookWidget {
         child: Row(
           children: [
             for (var tab in tabs.value)
-              InkWell(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () => _updateList(tab.id),
-                child: Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(right: 24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _renderTabText(tab),
-                      SizedBox(height: 6),
-                      AnimatedContainer(
-                        duration: _duration,
-                        curve: _curve,
-                        height: 2.5,
-                        width: tab.selected ? 40 : 0,
-                        decoration: BoxDecoration(
-                          color: ColorLib.primary,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      )
-                    ],
+              SlideInRight(
+                duration: const Duration(milliseconds: 500),
+                delay: const Duration(milliseconds: 1300),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () => _updateList(tab.id),
+                  child: Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.only(right: 24.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _renderTabText(tab),
+                        SizedBox(height: 6),
+                        AnimatedContainer(
+                          duration: _duration,
+                          curve: _curve,
+                          height: 2.5,
+                          width: tab.selected ? 40 : 0,
+                          decoration: BoxDecoration(
+                            color: ColorLib.primary,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

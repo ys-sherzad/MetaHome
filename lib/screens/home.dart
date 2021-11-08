@@ -1,3 +1,13 @@
+/**
+ *     (╯ ͡❛ ͜ʖ ͡❛)╯┻━┻
+ * **************************************************************
+ * Instagram @ys.sherzad  *************************
+ * Twitter @ys_sherzad  ********************
+ * **************************************************************
+ * "Make Everyday Count" 🇦🇫
+ * 
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/utils.dart';
@@ -7,6 +17,7 @@ import 'package:meta_home/widgets/home/control_room.dart';
 import 'package:meta_home/widgets/home/header.dart';
 import 'package:meta_home/widgets/home/power_usage_today.dart';
 import 'package:meta_home/widgets/home/room_tabs.dart';
+import 'package:animate_do/animate_do.dart';
 
 class Home extends HookWidget {
   const Home({Key? key}) : super(key: key);
@@ -29,22 +40,37 @@ class Home extends HookWidget {
           padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Column(
             children: [
-              Header(),
+              FadeInDown(
+                duration: const Duration(milliseconds: 600),
+                child: Header(),
+              ),
               const SizedBox(
                 height: 16.0,
               ),
-              PowerUsageToday(),
+              FadeInDown(
+                duration: const Duration(milliseconds: 600),
+                delay: const Duration(milliseconds: 1000),
+                child: PowerUsageToday(),
+              ),
               const SizedBox(
                 height: 28.0,
               ),
-              RoomTabs(),
+              FadeIn(
+                duration: const Duration(milliseconds: 600),
+                delay: const Duration(milliseconds: 1300),
+                child: RoomTabs(),
+              ),
               const SizedBox(
                 height: 15.0,
               ),
               Expanded(
                 child: Stack(
                   children: [
-                    ControlRoom(),
+                    FadeIn(
+                      // duration: const Duration(milliseconds: 600),
+                      delay: const Duration(milliseconds: 1400),
+                      child: ControlRoom(),
+                    ),
                     AnimatedPositioned(
                       duration: const Duration(milliseconds: 650),
                       curve: Curves.easeInOut,
