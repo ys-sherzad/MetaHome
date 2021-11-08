@@ -46,7 +46,7 @@ class ControlRoom extends HookWidget {
               name: room.name,
               countOfDevices: room.countOfDevices,
               isOn: room.isOn,
-              iconName: iconPath[room.id] ?? '1',
+              iconPath: iconPath[room.id] as String,
               updateList: () => _updateList(room.id),
             ),
         ],
