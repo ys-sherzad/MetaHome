@@ -1,7 +1,6 @@
 // import 'package:awesome_social/src/utils/colorLib.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:meta_home/utils.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({Key? key, required this.onPressed, required this.icon})
@@ -31,7 +30,6 @@ class ButtonIcon extends StatelessWidget {
   final Color activeIconColor;
   final Color inactiveIconColor;
   final double iconSize;
-  final String semanticLabel;
 
   const ButtonIcon({
     Key? key,
@@ -41,7 +39,6 @@ class ButtonIcon extends StatelessWidget {
     required this.inactiveIconPath,
     required this.activeIconColor,
     required this.inactiveIconColor,
-    required this.semanticLabel,
     this.iconSize = 24,
   }) : super(key: key);
 
@@ -52,7 +49,7 @@ class ButtonIcon extends StatelessWidget {
         onPressed: onPressed,
         icon: SvgPicture.asset(
           activeIconPath,
-          semanticsLabel: semanticLabel,
+          semanticsLabel: 'icon',
           height: iconSize,
           width: iconSize,
           fit: BoxFit.contain,
@@ -63,7 +60,7 @@ class ButtonIcon extends StatelessWidget {
         onPressed: onPressed,
         icon: SvgPicture.asset(
           inactiveIconPath,
-          semanticsLabel: semanticLabel,
+          semanticsLabel: 'icon',
           height: iconSize,
           width: iconSize,
           fit: BoxFit.contain,
@@ -79,32 +76,3 @@ class ButtonIcon extends StatelessWidget {
     );
   }
 }
-
-
-// Widget _activeButton() {
-      // return CutomButton(
-      //   onPressed,
-      //   SvgPicture.asset(
-      //     activeIconPath,
-      //     semanticsLabel: semanticLabel,
-      //     height: iconSize,
-      //     width: iconSize,
-      //     fit: BoxFit.contain,
-      //     color: activeIconColor,
-      //   ),
-      // );
-//     }
-
-//     Widget _inactiveButton() {
-//       return CustomButton(
-//         onPressed,
-//         SvgPicture.asset(
-//           inactiveIconPath,
-//           semanticsLabel: semanticLabel,
-//           height: iconSize,
-//           width: iconSize,
-//           fit: BoxFit.contain,
-//           color: inactiveIconColor,
-//         ),
-//       );
-//     }

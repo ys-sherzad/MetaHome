@@ -4,6 +4,9 @@ const double HEADER_HEIGHT = 70.0;
 const double LAYOUT_HORIZONTAL_OFFSET = 26.0;
 const double BOTTOM_TAB_HEIGHT = 60.0;
 
+const double MUSIC_PLAYER_OFFSET = 25;
+const double MUSIC_PLAYER_INITIAL_OFFSET = -140;
+
 const duration = Duration(milliseconds: 300);
 const curve = Curves.easeInCubic;
 

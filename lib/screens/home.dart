@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/utils.dart';
 import 'package:meta_home/widgets/home/bottom_tabs.dart';
 import 'package:meta_home/widgets/home/music_player_popup.dart';
@@ -7,11 +8,21 @@ import 'package:meta_home/widgets/home/header.dart';
 import 'package:meta_home/widgets/home/power_usage_today.dart';
 import 'package:meta_home/widgets/home/room_tabs.dart';
 
-class Home extends StatelessWidget {
+class Home extends HookWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final loaded = useState(false);
+
+    // Not an optimized way to animate
+    // the music player popup. better use controller
+    useEffect(() {
+      Future.delayed(const Duration(milliseconds: 500), () {
+        loaded.value = true;
+      });
+    }, []);
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -34,15 +45,21 @@ class Home extends StatelessWidget {
                 child: Stack(
                   children: [
                     ControlRoom(),
-                    Positioned(
+                    AnimatedPositioned(
+                      duration: const Duration(milliseconds: 650),
+                      curve: Curves.easeInOut,
                       child: MusicPlayerPopup(),
-                      bottom: BOTTOM_TAB_HEIGHT - 35,
+                      bottom: loaded.value
+                          ? MUSIC_PLAYER_OFFSET
+                          : MUSIC_PLAYER_INITIAL_OFFSET,
                       right: 0,
                       left: 0,
                     ),
-                    Positioned(
+                    AnimatedPositioned(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.linear,
                       child: BottomTabs(),
-                      bottom: 0,
+                      bottom: loaded.value ? 0 : -BOTTOM_TAB_HEIGHT,
                       left: 0,
                       right: 0,
                     ),

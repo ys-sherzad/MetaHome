@@ -93,7 +93,6 @@ class Content extends HookWidget {
                       activeIconColor: Colors.white,
                       inactiveIconPath: 'assets/images/heart-outline.svg',
                       inactiveIconColor: Color.fromRGBO(255, 255, 255, .6),
-                      semanticLabel: 'Favorite',
                       iconSize: 25,
                       onPressed: () {
                         isFavorite.value = !isFavorite.value;
@@ -108,7 +107,6 @@ class Content extends HookWidget {
                       activeIconColor: Colors.white,
                       inactiveIconPath: 'assets/images/pause.svg',
                       inactiveIconColor: Color.fromRGBO(255, 255, 255, .6),
-                      semanticLabel: 'Favorite',
                       onPressed: () {
                         isPlaying.value = !isPlaying.value;
                       },

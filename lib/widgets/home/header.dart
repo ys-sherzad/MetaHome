@@ -43,7 +43,7 @@ class Header extends HookWidget {
             ),
           ),
           CircleAvatar(
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.grey.withOpacity(.4),
             backgroundImage: AssetImage('assets/images/me.png'),
             minRadius: 28.0,
           )
