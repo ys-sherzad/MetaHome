@@ -1,5 +1,6 @@
 name: meta_home
 description: A new Flutter project.
+repository: https://github.com/ys-sherzad/MetaHome
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -38,7 +39,7 @@ dependencies:
   hooks_riverpod: ^1.0.0-dev.11
   flutter_vector_icons: ^1.0.0
   flutter_svg: ^0.23.0+1
-  flutter_staggered_animations: ^1.0.0
+  animate_do: ^2.0.0
 
 dev_dependencies:
   flutter_test:
