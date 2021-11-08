@@ -94,7 +94,7 @@ class Content extends HookWidget {
                       inactiveIconPath: 'assets/images/heart-outline.svg',
                       inactiveIconColor: Color.fromRGBO(255, 255, 255, .6),
                       semanticLabel: 'Favorite',
-                      iconSize: 26,
+                      iconSize: 25,
                       onPressed: () {
                         isFavorite.value = !isFavorite.value;
                       },
