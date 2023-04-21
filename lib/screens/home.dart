@@ -19,7 +19,7 @@ class Home extends HookWidget {
     // Not an optimized way to animate
     // the music player popup. better use controller
     useEffect(() {
-      Future.delayed(const Duration(milliseconds: 500), () {
+      Future.delayed(const Duration(milliseconds: 2000), () {
         loaded.value = true;
       });
       return;

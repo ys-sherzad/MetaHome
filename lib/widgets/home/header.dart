@@ -32,7 +32,7 @@ class Header extends HookWidget {
                   ),
                   // SizedBox(height: 4.0),
                   Text(
-                    'Elon Musk',
+                    'John Doe',
                     style: TextStyle(
                       fontSize: 21.0,
                       fontWeight: FontWeight.w700,
@@ -44,7 +44,7 @@ class Header extends HookWidget {
           ),
           CircleAvatar(
             backgroundColor: Colors.grey.withOpacity(.4),
-            backgroundImage: AssetImage('assets/images/me.png'),
+            backgroundImage: AssetImage('assets/images/john-doe.png'),
             minRadius: 28.0,
           )
         ],
