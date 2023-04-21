@@ -1,13 +1,3 @@
-/**
- *     (╯ ͡❛ ͜ʖ ͡❛)╯┻━┻
- * **************************************************************
- * Instagram @ys.sherzad  *************************
- * Twitter @ys_sherzad  ********************
- * **************************************************************
- * "Make Everyday Count" 🇦🇫
- * 
- */
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/utils.dart';
@@ -32,6 +22,7 @@ class Home extends HookWidget {
       Future.delayed(const Duration(milliseconds: 500), () {
         loaded.value = true;
       });
+      return;
     }, []);
 
     return Scaffold(
@@ -75,9 +66,7 @@ class Home extends HookWidget {
                       duration: const Duration(milliseconds: 650),
                       curve: Curves.easeInOut,
                       child: MusicPlayerPopup(),
-                      bottom: loaded.value
-                          ? MUSIC_PLAYER_OFFSET
-                          : MUSIC_PLAYER_INITIAL_OFFSET,
+                      bottom: loaded.value ? MUSIC_PLAYER_OFFSET : MUSIC_PLAYER_INITIAL_OFFSET,
                       right: 0,
                       left: 0,
                     ),

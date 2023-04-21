@@ -1,13 +1,3 @@
-/**
- *     (╯ ͡❛ ͜ʖ ͡❛)╯┻━┻
- * **************************************************************
- * Instagram @ys.sherzad  *************************
- * Twitter @ys_sherzad  ********************
- * **************************************************************
- * "Make Everyday Count" 🇦🇫
- * 
- */
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:meta_home/utils.dart';
@@ -36,11 +26,7 @@ class Content extends HookWidget {
       height: BOTTOM_TAB_HEIGHT * 2.3,
       width: double.infinity,
       color: ColorLib.secondary,
-      padding: EdgeInsets.only(
-          left: LAYOUT_HORIZONTAL_OFFSET + 20,
-          right: LAYOUT_HORIZONTAL_OFFSET + 20,
-          top: 18,
-          bottom: 14),
+      padding: EdgeInsets.only(left: LAYOUT_HORIZONTAL_OFFSET + 20, right: LAYOUT_HORIZONTAL_OFFSET + 20, top: 18, bottom: 14),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -151,8 +137,7 @@ class Clipper extends CustomClipper<Path> {
 
     Path path = Path()
       ..moveTo(0, radius)
-      ..cubicTo(controlPoint1.dx, controlPoint2.dy, controlPoint2.dx,
-          controlPoint2.dy, endPoint.dx, endPoint.dy)
+      ..cubicTo(controlPoint1.dx, controlPoint2.dy, controlPoint2.dx, controlPoint2.dy, endPoint.dx, endPoint.dy)
       ..lineTo(size.width, size.height)
       ..lineTo(0, size.height)
       ..close();
